@@ -1,3 +1,8 @@
+resource "confluent_environment" "development" {
+  display_name = "Development"
+
+  
+}
 
 
 
@@ -11,8 +16,8 @@ resource "confluent_kafka_cluster" "basic" {
 
   environment {
     
-  #id=confluent_environment.development.id
-  id="env-2rr6r1"
+  id=confluent_environment.development.id
+ 
   }
 
   
@@ -50,8 +55,8 @@ resource "confluent_api_key" "terraform_Created_APIKEY" {
     kind        = confluent_kafka_cluster.basic.kind
 
     environment {
-    # id = confluent_environment.development.id
-       id="env-2rr6r1"
+    id = confluent_environment.development.id
+       
     }
   }
     
@@ -100,8 +105,8 @@ resource "confluent_ksql_cluster" "example" {
     id = confluent_service_account.terraform_dev.id
   }
   environment {
-    #id = confluent_environment.development.id
-    id="env-2rr6r1"
+    id = confluent_environment.development.id
+    
      
   }
   
@@ -113,8 +118,8 @@ resource "confluent_ksql_cluster" "example" {
 #creating datagen source connector
 resource "confluent_connector" "datagen-source" {
   environment {
-    #id = confluent_environment.development.id
-    id="env-2rr6r1"
+    id = confluent_environment.development.id
+    
   }
   kafka_cluster {
     id = confluent_kafka_cluster.basic.id
@@ -139,8 +144,8 @@ resource "confluent_connector" "datagen-source" {
 }
 resource "confluent_connector" "datagen-source2" {
   environment {
-    #id = confluent_environment.development.id
-    id="env-2rr6r1"
+    id = confluent_environment.development.id
+    
   }
   kafka_cluster {
     id = confluent_kafka_cluster.basic.id
