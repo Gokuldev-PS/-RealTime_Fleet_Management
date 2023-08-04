@@ -9,7 +9,7 @@ This demo involves the ingestion of simulated fleet data using the data gen conn
 
 
 <div align="center"> 
-  <img src="images/Final_Arch.jpeg" width =100% heigth=100%>
+  <img src="images/Arch_Diagram.jpg" width =100% heigth=100%>
 </div>
 
 
