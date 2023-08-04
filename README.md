@@ -6,7 +6,7 @@ This demo involves the ingestion of simulated fleet data using the data gen conn
 
 ## Architecture Diagram
 
-
+In this demonstration, we will be using the data gen connector to generate mock events for fleet users (driver details) and IoT sensor location events for each driver. Using KSQLDB, we will create a table that provides real-time fleet positions, along with driver and other fleet-related details. Finally, we will use the Mongo Atlas Sink Connector to send these events back to MongoDB for real-time monitoring.
 
 <div align="center"> 
   <img src="images/Arch_Diagram.jpg" width =100% heigth=100%>
