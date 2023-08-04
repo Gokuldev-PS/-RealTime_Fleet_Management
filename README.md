@@ -1,4 +1,4 @@
-# RealTime_Fleet_Management
+# Real Time Fleet Management
 
 Real-time fleet management systems have become increasingly important in recent years, as businesses seek to optimize their fleet operations and improve customer service. Confluent Cloud, a fully-managed event streaming platform powered by Apache Kafka, provides a powerful solution for real-time fleet management. By leveraging Confluent Cloud's capabilities, businesses can collect and analyze data from their fleet in real-time, enabling them to make informed decisions and take proactive actions to improve efficiency, reduce costs, and enhance customer satisfaction. This Demo will explore the benefits of using Confluent Cloud for real-time fleet management and provide insights into how it can help businesses achieve their goals.
 
