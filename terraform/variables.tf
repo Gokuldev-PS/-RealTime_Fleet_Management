@@ -10,3 +10,24 @@ variable "confluent_cloud_api_secret" {
   sensitive   = true
   default = " "    #Add your API secret created during pre-requsite
 }
+
+variable "mongo_host {
+  description = "Add your Atlas Host"
+  type        = string
+  sensitive   = true
+  default = " "    # Add your mongohost 
+}
+
+variable "mongo_username {
+  description = "Add your mongoDB Atlas Username"
+  type        = string
+  sensitive   = true
+  default = " "    # Add your username
+}
+
+variable "mongo_password{
+  description = "Add your mongoDB Atlas password"
+  type        = string
+  sensitive   = true
+  default = " "    # Add your password
+}
