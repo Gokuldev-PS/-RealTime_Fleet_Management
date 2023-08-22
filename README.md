@@ -200,28 +200,8 @@ Stop the running query by clicking on **Stop**.
 
 ## Sinking Events from Confluent Cloud to MongoDB Cluster Using MongoDB Sink Connector
 
-You can create  Sink connector either through CLI or Confluent Cloud web UI.
+When you run the Terraform script, the Connector will be created automatically. Once you have created the Streams and Tables, you should be able to view the throughput.
 
-<details>
-    <summary><b>CLI</b></summary>
-
-1. Run the following command to create the  Sink connector.
-
-   ```bash
-   confluent connect cluster create --config-file confluent/connect_config.json
-   ```
-
-**Note:** Before executing the command, substitute the connect properties with the filename that you are using.
-
-</details>
-<br>
-
-<details>
-    <summary><b>Confluent Cloud Web UI</b></summary>
-
-1. On the navigation menu, select **Connectors** and **+ Add connector**.
-1. In the search bar search for your connector and select the Mongo Sink Atlasconnector.
-1. Create a new  Mongo Atlas  Sink connector and complete the required fields like server and login details.
 1. For Demo purposes ensure that MongoCluster is public by adding 0.0.0.0/0  in Network Access Section.
    <div align="center"> 
   <img src="images/access.jpeg" width =50% heigth=50%>
