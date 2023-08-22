@@ -204,7 +204,7 @@ resource "confluent_connector" "mongo-db-sink" {
     "connection.host"          = var.mongo_host
     "connection.user"          = var.mongo_username
     "input.data.format"        = "JSON"
-    "topics"                   = "real_time_location"
+    "topics"                   = confluent_kafka_topic.real_time_location.topic_name
     "max.num.retries"          = "3"
     "retries.defer.timeout"    = "5000"
     "max.batch.size"           = "0"
