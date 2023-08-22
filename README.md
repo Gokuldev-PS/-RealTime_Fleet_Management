@@ -54,7 +54,7 @@ In order to successfully complete this demo you need to install few tools before
 
 1. This demo uses Terraform  to spin up resources that are needed.
 
-2. Update the `terraform/variables.tf` file for the following variables with your Cloud API credentials.
+2. Update the `terraform/variables.tf` file for the following variables with your Cloud API credentials as well your MongoDB Details.
 
 ```
 variable "confluent_cloud_api_key" {
@@ -64,6 +64,17 @@ variable "confluent_cloud_api_key" {
 
 variable "confluent_cloud_api_secret" {
   default = "Replace with your API Key created during pre-requsite"   
+}
+variable "mongo_host" {
+  default = " "    # Add your mongohost 
+}
+
+variable "mongo_username" {
+  default = " "    # Add your username
+}
+
+variable "mongo_password" {
+ default = " "    # Add your password
 }
 ```
  ### Build your cloud infrastructure
