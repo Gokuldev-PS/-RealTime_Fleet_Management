@@ -94,6 +94,19 @@ resource "confluent_kafka_topic" "Fleet_User" {
   }
 }
 
+resource "confluent_kafka_topic" "real_time_location" {
+  kafka_cluster {
+    id = confluent_kafka_cluster.basic.id
+  }
+  topic_name    = "real_time_location"
+  rest_endpoint      = confluent_kafka_cluster.basic.rest_endpoint
+  partitions_count   = 2
+  credentials {
+    key   = confluent_api_key.terraform_Created_APIKEY.id
+    secret = confluent_api_key.terraform_Created_APIKEY.secret
+  }
+}
+
   
 resource "confluent_ksql_cluster" "example" {
   display_name = "example"
@@ -167,5 +180,38 @@ resource "confluent_connector" "datagen-source2" {
   depends_on = [
     confluent_api_key.terraform_Created_APIKEY,
   ]
+}
+
+resource "confluent_connector" "mongo-db-sink" {
+  environment {
+      id = confluent_environment.development.id
+  }
+  kafka_cluster {
+    id = confluent_kafka_cluster.basic.id
+  }
+
+  
+  config_sensitive = {
+    "connection.password" = var.mongo_password,
+  }
+
+  
+  config_nonsensitive = {
+    "connector.class"          = "MongoDbAtlasSink"
+    "name"                     = "confluent-mongodb-sink"
+    "kafka.auth.mode"          = "SERVICE_ACCOUNT"
+    "kafka.service.account.id" = confluent_service_account.terraform_dev.id
+    "connection.host"          = var.mongo_host
+    "connection.user"          = var.mongo_username
+    "input.data.format"        = "JSON"
+    "topics"                   = "real_time_location"
+    "max.num.retries"          = "3"
+    "retries.defer.timeout"    = "5000"
+    "max.batch.size"           = "0"
+    "database"                 = "real_time_location"
+    "collection"               = "real_time_location"
+    "tasks.max"                = "1"
+  }
+
 }
 
