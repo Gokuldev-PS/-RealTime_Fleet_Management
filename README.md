@@ -204,7 +204,7 @@ When you run the Terraform script, the Connector will be created automatically. 
 
 1. For Demo purposes ensure that MongoCluster is public by adding 0.0.0.0/0  in Network Access Section.
    <div align="center"> 
-  <img src="images/access.jpeg" width =50% heigth=50%>
+  <img src="images/access.jpeg" width =100% heigth=100%>
 </div>
 
 </details>
