@@ -212,6 +212,7 @@ resource "confluent_connector" "mongo-db-sink" {
     "collection"               = "real_time_location"
     "tasks.max"                = "1"
   }
-
+depends_on = [ confluent_kafka_topic.real_time_location,
+ ]
 }
 
