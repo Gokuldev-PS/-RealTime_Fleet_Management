@@ -102,7 +102,7 @@ variable "mongo_password" {
 
 
 
-## Enrich Data Streams with ksqlDB
+<header> Enrich Data Streams with ksqlDB</header>
 
 Now that you have data flowing through Confluent, you can now easily build stream processing applications using ksqlDB. You are able to continuously transform, enrich, join, and aggregate your data using simple SQL syntax. You can gain value from your data directly from Confluent in real-time. Also, ksqlDB is a fully managed service within Confluent Cloud with a 99.9% uptime SLA. You can now focus on developing services and building your data pipeline while letting Confluent manage your resources for you.
 
